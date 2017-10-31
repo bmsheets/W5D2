@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  font-family: sans-serif;
+}
+
+header, body, footer {
+  width: 80%;
+  margin: auto;
+}
+
+header {
+
+}
+
+body {
+  background: darkseagreen;
+}
+
+h1, h2, h3 {
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+button {
+  color: white;
+  background: darkseagreen;
+}
+
+link {
+  color: tomato;
+}
+
+link:visited {
+  color: crimson;
+}
+
+.main-header {
+  margin: 0;
+}
+
+.container {
+  color: white;
+  background: darkslategray;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 30px;
+}

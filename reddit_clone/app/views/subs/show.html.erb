@@ -1,7 +1,9 @@
 <h1>Show Sub</h1>
 
-<%= @sub.title %>
-<%= @sub.description %>
+<section class="container">
+  <%= @sub.title %>
+  <%= @sub.description %>
 
-<%= link_to "All Subs", subs_url %>
-<%= link_to "Edit Sub", edit_sub_url(@sub) %>
+  <%= link_to "All Subs", subs_url %>
+  <%= link_to "Edit Sub", edit_sub_url(@sub) %>
+</section>

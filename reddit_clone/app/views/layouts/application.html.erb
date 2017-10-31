@@ -8,17 +8,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <% if logged_in? %>
-  <%= current_user.username %>
-  <%= button_to "Sign Out", session_url, method: :delete %>
-  <% else %>
-  <%= link_to "Sign In", new_session_url %>
-  <%= link_to "Sign Up", new_user_url %>
-  <% end %>
+  <header class="main-header">
+    <nav class="main-nav">
+      <% if logged_in? %>
+      <%= current_user.username %>
+      <%= button_to "Sign Out", session_url, method: :delete %>
+      <% else %>
+      <%= link_to "Sign In", new_session_url %>
+      <%= link_to "Sign Up", new_user_url %>
+      <% end %>
+    </nav>
 
-  <% flash[:errors].try(:each) do |err| %>
-  <%= err %>
-  <% end %>
+    <ul class="error-list">
+      <% flash[:errors].try(:each) do |err| %>
+      <li class="error"><%= err %></li>
+      <% end %>
+    </ul>
+  </header>
 
   <body>
     <%= yield %>
