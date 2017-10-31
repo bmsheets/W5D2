@@ -1,9 +1,19 @@
 <h1>Show Sub</h1>
 
 <section class="container">
-  <%= @sub.title %>
-  <%= @sub.description %>
+
+  <h3><%= @sub.title %></h3>
+  <p><%= @sub.description %></p>
 
   <%= link_to "All Subs", subs_url %>
   <%= link_to "Edit Sub", edit_sub_url(@sub) %>
+  <%= link_to "Add Post", new_sub_post_url(@sub) %>
 </section>
+
+<% @sub.posts.each do |post| %>
+<section class="container">
+  <h3><%= post.title %></h3>
+  <a href="<%= post.url %>"><%= post.url %></a>
+  <p><%= post.content %></p>
+</section>
+<% end %>

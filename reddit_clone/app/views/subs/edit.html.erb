@@ -1,12 +1,12 @@
 <h1>Edit Sub</h1>
 
-<form class="container" action="<%= subs_url(@sub) %>" method="post">
+<form class="container" action="<%= sub_url(@sub) %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label>
     Title: <input type="text" name="sub[title]" value="<%= @sub.title %>">
   </label>
   <label>
-    Description: <input type="text" name="sub[description]" value="<%= @sub.description %>">
+    Description: <textarea name="sub[description]" rows="8" cols="80"></textarea>
   </label>
   <input type="submit" name="" value="Update Sub">
 </form>

@@ -28,25 +28,20 @@ header {
 }
 
 body {
-  background: darkseagreen;
+  background: powderblue;
 }
 
-h1, h2, h3 {
+h1 {
   color: black;
   text-shadow: 2px 2px white;
 }
 
-button {
+.cointainer a {
   color: white;
-  background: darkseagreen;
 }
 
-link {
-  color: tomato;
-}
-
-link:visited {
-  color: crimson;
+.container a:visited {
+  color: whitesmoke;
 }
 
 .main-header {
@@ -55,8 +50,10 @@ link:visited {
 
 .container {
   color: white;
-  background: darkslategray;
+  background: navy;
+  /*background: royalblue;*/
   border: 2px solid white;
   border-radius: 10px;
   padding: 30px;
+  margin: 20px 0px;
 }
