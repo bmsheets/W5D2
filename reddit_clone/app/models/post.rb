@@ -7,5 +7,14 @@ class Post < ApplicationRecord
     class_name: :User,
     optional: true
 
-  belongs_to :sub
+  has_many :post_subs,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: :PostSub,
+    dependent: :destroy,
+    inverse_of: :post
+
+  has_many :subs,
+    through: :post_subs,
+    source: :sub
 end

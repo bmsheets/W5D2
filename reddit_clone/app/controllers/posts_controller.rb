@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login, only: [:new, :create]
   before_action :require_author, only: [:edit, :update, :destroy]
 
   def new
@@ -8,9 +9,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
-    @post.sub_id = params[:sub_id]
+    puts @post.attributes
     if @post.save
-      redirect_to sub_url(@post.sub)
+      redirect_to sub_url(params[:sub_id])
     else
       flash[:errors] = @post.errors.full_messages
       render :new
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :url, :content)
+    params.require(:post).permit(:title, :url, :content, sub_ids: [])
   end
 
   def require_author
